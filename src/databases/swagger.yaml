@@ -10,27 +10,52 @@ servers:
   # - url: https://galleria-arzk.onrender.com/api
   #   description: Web server
 paths:
-  # /paintings:
-  #   get:
-  #     summary: Get all paintings
-  #     responses:
-  #       "200":
-  #         description: Successful response
-  #         content:
-  #           application/json:
-  #             schema:
-  #               type: array
-  #               items:
-  #                 type: string
-  #       "400":
-  #         description: Bad Request
-  #         content:
-  #           application/json:
-  #             example:
-  #               error: Bad request parameters
-  #       "500":
-  #         description: Internal Server Error
-  #         content:
-  #           application/json:
-  #             example:
-  #               error: Internal server error
+  /personalinfo:
+    post:
+      summary: Create a new personal info entry
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the person.
+                  example: John Doe
+                email:
+                  type: string
+                  format: email
+                  description: The email address of the person.
+                  example: john@example.com
+                phone:
+                  type: string
+                  description: The phone number of the person.
+                  example: +1234567890
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Info"
+        "500":
+          description: Internal Server Error
+components:
+  schemas:
+    Info:
+      type: object
+      properties:
+        _id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+      required:
+        - name
+        - email
+        - phone

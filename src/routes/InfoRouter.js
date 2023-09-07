@@ -1,8 +1,8 @@
 import express from "express";
-// import { getAllPaintings } from "../controllers/project-controller.js";
+import { postAnswers } from "../controllers/project-controller.js";
 
 const InfoRouter = express.Router();
 
-// InfoRouter.get("/paintings", getAllPaintings);
+InfoRouter.post("/personalinfo", postAnswers);
 
 export default InfoRouter;
