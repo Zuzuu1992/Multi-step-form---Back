@@ -14,10 +14,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-// app.get("/", (req, res) => {
-//   return res.status(200).json({ message: "App works!" });
-// });
-
 app.use("/api", InfoRouter);
 app.use("/", ...swaggerMiddleware());
 

@@ -12,8 +12,10 @@ servers:
 paths:
   /personalinfo:
     post:
-      summary: Create a new personal info entry
+      tags:
+        - Multi step form
       requestBody:
+        description: post base
         required: true
         content:
           application/json:
@@ -22,40 +24,18 @@ paths:
               properties:
                 name:
                   type: string
-                  description: The name of the person.
-                  example: John Doe
                 email:
                   type: string
-                  format: email
-                  description: The email address of the person.
-                  example: john@example.com
-                phone:
+                number:
+                  type: number
+                plan:
                   type: string
-                  description: The phone number of the person.
-                  example: +1234567890
+                onlineService:
+                  type: string
+                LargerStorage:
+                  type: string
+                CustomizableProfile:
+                  type: string
       responses:
-        "201":
-          description: Created
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Info"
-        "500":
-          description: Internal Server Error
-components:
-  schemas:
-    Info:
-      type: object
-      properties:
-        _id:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-        phone:
-          type: string
-      required:
-        - name
-        - email
-        - phone
+        "200":
+          description: Multi step form data

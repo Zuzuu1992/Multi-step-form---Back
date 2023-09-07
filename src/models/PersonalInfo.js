@@ -10,8 +10,20 @@ const PersonalInfoSchema = new Schema({
     required: true,
   },
   phone: {
-    type: Schema.Types.String,
+    type: Schema.Types.Number,
     required: true,
+  },
+  plan: {
+    type: Schema.Types.Number,
+  },
+  onlineService: {
+    type: Schema.Types.Number,
+  },
+  LargerStorage: {
+    type: Schema.Types.Number,
+  },
+  CustomizableProfile: {
+    type: Schema.Types.Number,
   },
 });
 
