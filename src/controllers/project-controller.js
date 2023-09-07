@@ -7,11 +7,7 @@ export const postAnswers = async (req, res) => {
       email: req.body.email,
       phone: req.body.phone,
     });
-
-    // Save the newInfo instance to the database
     await newInfo.save();
-
-    // Respond with the created document
     res.status(201).json(newInfo);
   } catch (error) {
     console.error(error);

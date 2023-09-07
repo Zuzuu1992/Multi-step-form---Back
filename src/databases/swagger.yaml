@@ -7,8 +7,8 @@ info:
 servers:
   - url: http://localhost:3000/api
     description: local server
-  # - url: https://galleria-arzk.onrender.com/api
-  #   description: Web server
+  - url: https://multi-step-form-ek9o.onrender.com/api
+    description: Web server
 paths:
   /personalinfo:
     post:
