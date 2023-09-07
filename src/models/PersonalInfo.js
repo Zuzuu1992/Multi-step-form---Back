@@ -14,16 +14,16 @@ const PersonalInfoSchema = new Schema({
     required: true,
   },
   plan: {
-    type: Schema.Types.Number,
+    type: Schema.Types.String,
   },
   onlineService: {
-    type: Schema.Types.Number,
+    type: Schema.Types.String,
   },
   LargerStorage: {
-    type: Schema.Types.Number,
+    type: Schema.Types.String,
   },
   CustomizableProfile: {
-    type: Schema.Types.Number,
+    type: Schema.Types.String,
   },
 });
 

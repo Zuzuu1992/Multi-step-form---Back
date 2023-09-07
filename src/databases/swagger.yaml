@@ -24,10 +24,13 @@ paths:
               properties:
                 name:
                   type: string
+                  required: true
                 email:
                   type: string
+                  required: true
                 number:
                   type: number
+                  required: true
                 plan:
                   type: string
                 onlineService:
