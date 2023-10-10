@@ -10,7 +10,7 @@ const PersonalInfoSchema = new Schema({
     required: true,
   },
   phone: {
-    type: Schema.Types.Number,
+    type: Schema.Types.String,
     required: true,
   },
   plan: {
